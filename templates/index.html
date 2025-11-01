@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarik Tambang Matematika</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div id="start-screen">
+        <h1>Tarik Tambang Matematika</h1>
+        <div class="player-input">
+            <label for="player1">Pemain 1:</label>
+            <input type="text" id="player1" placeholder="Masukkan Nama">
+        </div>
+        <div class="player-input">
+            <label for="player2">Pemain 2:</label>
+            <input type="text" id="player2" placeholder="Masukkan Nama">
+        </div>
+        <button id="start-button">Mulai Bermain</button>
+        <a href="/leaderboard" class="leaderboard-link">Lihat Leaderboard</a>
+    </div>
+
+    <div id="game-screen" class="hidden">
+        <div class="player-names">
+            <span id="p1-name-display"></span>
+            <span id="p2-name-display"></span>
+        </div>
+        <div id="game-area">
+            <div id="rope-container">
+                <div id="rope"></div>
+                <div id="center-line"></div>
+            </div>
+        </div>
+        
+        <div id="question-container">
+            <h2 id="question"></h2>
+            <div class="answers">
+                <button id="answer-left"></button>
+                <button id="answer-right"></button>
+            </div>
+        </div>
+
+        <div class="controls-info">
+            <p>Pemain 1: A (Kiri) & D (Kanan)</p>
+            <p>Pemain 2: ← (Kiri) & → (Kanan)</p>
+        </div>
+    </div>
+
+    <div id="end-screen" class="hidden">
+        <h1 id="winner-message"></h1>
+        <button id="play-again-button">Main Lagi</button>
+        <a href="/leaderboard" class="leaderboard-link">Lihat Leaderboard</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

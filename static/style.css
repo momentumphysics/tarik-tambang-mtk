@@ -1,0 +1,163 @@
+body {
+    font-family: sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#start-screen, #end-screen, .leaderboard-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #0056b3;
+}
+
+.player-input {
+    margin: 15px 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+}
+
+button, .leaderboard-link, .back-link {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover, .leaderboard-link:hover, .back-link:hover {
+    background-color: #0056b3;
+}
+
+.leaderboard-link, .back-link {
+    background-color: #6c757d;
+}
+
+.leaderboard-link:hover, .back-link:hover {
+    background-color: #5a6268;
+}
+
+#game-screen {
+    width: 90%;
+    max-width: 600px;
+}
+
+.player-names {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    padding: 0 20px;
+}
+
+#game-area {
+    background-color: #e9ecef;
+    border: 2px solid #ced4da;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#rope-container {
+    position: relative;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: red;
+    transform: translateX(-50%);
+}
+
+#rope {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Start at center */
+    width: 10px;
+    height: 10px;
+    background-color: #d2691e;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: left 0.5s ease-in-out;
+    border: 2px solid #8b4513;
+}
+
+#question-container h2 {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+.answers {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.answers button {
+    width: 45%;
+    font-size: 36px;
+    padding: 20px;
+}
+
+.controls-info {
+    margin-top: 20px;
+    color: #6c757d;
+}
+
+/* Leaderboard Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
