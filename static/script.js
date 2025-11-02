@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let player1Name = 'Pemain 1';
     let player2Name = 'Pemain 2';
     let ropePosition = 50; // in percentage (50 is center)
-    const pullStrength = 8; // how much percentage the rope moves
-    const winThreshold = 0; // Rope needs to be at <0% or >100% to win
+    const pullStrength = 1; // how much percentage the rope moves
     let currentCorrectAnswer = null;
     let gameActive = false;
 
@@ -142,14 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateRope() {
-        rope.style.left = `${ropePosition}%`;
+        rope.style.left = ropePosition + '%';
     }
 
     function checkWinCondition() {
         let winner = null;
-        if (ropePosition <= winThreshold) {
+        // Player 1 wins if the rope's center is at 40% or less
+        if (ropePosition <= 44) {
             winner = player1Name;
-        } else if (ropePosition >= (100 - winThreshold)) {
+        }
+        // Player 2 wins if the rope's center is at 60% or more
+        else if (ropePosition >= 56) {
             winner = player2Name;
         }
 

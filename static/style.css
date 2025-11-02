@@ -1,157 +1,183 @@
+/* General Body and Screens */
 body {
     font-family: sans-serif;
-    background-color: #f0f8ff;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
     text-align: center;
+    margin: 0;
+    background-color: #f8f9f8;
+    color: #333;
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
-#start-screen, #end-screen, .leaderboard-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+#start-screen, #end-screen {
+    padding-top: 100px;
 }
 
 h1 {
-    color: #0056b3;
+    font-size: 2.5em;
+    margin-bottom: 30px;
 }
 
+/* Player Input */
 .player-input {
     margin: 15px 0;
 }
 
-input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
+.player-input label {
+    font-size: 1.2em;
+    margin-right: 10px;
 }
 
+.player-input input {
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
 button, .leaderboard-link, .back-link {
-    background-color: #007bff;
-    color: white;
-    border: none;
     padding: 12px 25px;
+    font-size: 1.2em;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
     text-decoration: none;
     display: inline-block;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
 button:hover, .leaderboard-link:hover, .back-link:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
 }
 
-.leaderboard-link, .back-link {
-    background-color: #6c757d;
+#play-again-button {
+    background-color: #008CBA;
 }
 
-.leaderboard-link:hover, .back-link:hover {
-    background-color: #5a6268;
+#play-again-button:hover {
+    background-color: #007B9E;
 }
 
+/* Game Screen */
 #game-screen {
-    width: 90%;
-    max-width: 600px;
+    width: 100%;
 }
 
 .player-names {
     display: flex;
-    justify-content: space-between;
-    font-size: 20px;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto 20px auto;
+    margin-top: 40px;
+    font-size: 1.5em;
     font-weight: bold;
-    color: #007bff;
-    padding: 0 20px;
 }
 
 #game-area {
-    background-color: #e9ecef;
-    border: 2px solid #ced4da;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-}
-
-#rope-container {
+    width: 80vw;
+    max-width: 1000px;
+    height: 200px;
     position: relative;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 5px;
-    overflow: hidden;
+    margin: 0 auto;
 }
 
-#center-line {
+
+
+.finish-line {
+    width: 2px;
+    height: 10%;
+    background-color: blue;
     position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background-color: red;
-    transform: translateX(-50%);
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#finish-line-left {
+    left: 44%;
+}
+
+#finish-line-right {
+    left: 56%;
 }
 
 #rope {
+    width: 80%;
+    height: 150px; /* Adjust as needed */
+    background-image: url('tarik%20tambang.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     top: 50%;
-    left: 50%; /* Start at center */
-    width: 10px;
-    height: 10px;
-    background-color: #d2691e;
-    border-radius: 50%;
+    left: 50%; /* This will be updated by JS */
     transform: translate(-50%, -50%);
-    transition: left 0.5s ease-in-out;
-    border: 2px solid #8b4513;
+    z-index: 2;
 }
 
-#question-container h2 {
-    font-size: 48px;
-    margin: 20px 0;
+/* Question Area */
+#question-container {
+    margin-top: 30px;
 }
 
-.answers {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+#question {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .answers button {
-    width: 45%;
-    font-size: 36px;
-    padding: 20px;
+    font-size: 1.5em;
+    margin: 0 15px;
+    background-color: #f0ad4e;
+}
+
+.answers button:hover {
+    background-color: #ec971f;
 }
 
 .controls-info {
-    margin-top: 20px;
-    color: #6c757d;
+    margin-top: 30px;
+    color: #777;
 }
 
-/* Leaderboard Table */
+/* Leaderboard Styles */
+.leaderboard-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 3px solid #333;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.leaderboard-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-}
-
-thead {
-    background-color: #007bff;
-    color: white;
+    margin-bottom: 30px;
 }
 
 th, td {
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+thead th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
 }
 
 tbody tr:nth-child(even) {
@@ -160,4 +186,12 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
     background-color: #ddd;
+}
+
+.back-link {
+    background-color: #008CBA;
+}
+
+.back-link:hover {
+    background-color: #007B9E;
 }
