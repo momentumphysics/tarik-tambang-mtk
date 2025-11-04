@@ -1,6 +1,7 @@
 
 import os
 import random
+import time
 from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 
@@ -36,6 +37,8 @@ def index():
 def get_leaderboard():
     players = Leaderboard.query.order_by(Leaderboard.wins.desc()).all()
     return render_template('leaderboard.html', players=players)
+
+import time
 
 # API untuk mendapatkan soal matematika baru
 @app.route('/question')
@@ -75,6 +78,8 @@ def get_question():
     # Acak posisi jawaban
     answers = [answer, wrong_answer]
     random.shuffle(answers)
+
+    time.sleep(0.5)
 
     return jsonify({
         'question': question,
