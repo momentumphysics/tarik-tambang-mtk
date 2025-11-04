@@ -79,8 +79,6 @@ def get_question():
     answers = [answer, wrong_answer]
     random.shuffle(answers)
 
-    time.sleep(0.5)
-
     return jsonify({
         'question': question,
         'answers': answers,

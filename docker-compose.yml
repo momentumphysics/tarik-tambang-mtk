@@ -15,7 +15,7 @@ services:
       - FLASK_RUN_HOST=0.0.0.0
     depends_on:
       - db
-    command: ["flask", "run"]
+    command: ["/bin/sh", "-c", "sleep 5 && flask run"]
 
   db:
     image: mysql:8.0

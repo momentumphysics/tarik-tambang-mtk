@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("New script loaded!");
     // Screens
     const startScreen = document.getElementById('start-screen');
     const gameScreen = document.getElementById('game-screen');
@@ -24,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Game State
     let player1Name = 'Pemain 1';
     let player2Name = 'Pemain 2';
-    let ropePosition = 50; // in percentage (50 is center)
-    const pullStrength = 1; // how much percentage the rope moves
+    let ropePosition = 50;
+    const pullStrength = 1;
     let currentCorrectAnswer = null;
     let gameActive = false;
 
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-enable input after a delay
             setTimeout(() => {
                 gameActive = true;
-            }, 200);
+            }, 100);
 
         } catch (error) {
             console.error('Gagal mengambil soal:', error);
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Even if there's an error, re-enable input after a delay
             setTimeout(() => {
                 gameActive = true;
-            }, 200);
+            }, 100);
         }
     }
 
