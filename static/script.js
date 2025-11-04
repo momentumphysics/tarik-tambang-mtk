@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Re-enable input after a delay
             setTimeout(() => {
                 gameActive = true;
-            }, 100);
+            }, 200);
 
         } catch (error) {
             console.error('Gagal mengambil soal:', error);
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Even if there's an error, re-enable input after a delay
             setTimeout(() => {
                 gameActive = true;
-            }, 100);
+            }, 200);
         }
     }
 
