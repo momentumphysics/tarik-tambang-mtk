@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         resetRope();
         getNewQuestion();
-        gameActive = true;
     }
 
     function resetGame() {
@@ -71,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function getNewQuestion() {
+        gameActive = false; // Disable input immediately
         try {
             const response = await fetch('/question');
             const data = await response.json();
@@ -80,9 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
             answerRightButton.textContent = data.answers[1];
             currentCorrectAnswer = data.correct;
 
+            // Re-enable input after a delay
+            setTimeout(() => {
+                gameActive = true;
+            }, 200);
+
         } catch (error) {
             console.error('Gagal mengambil soal:', error);
             questionEl.textContent = 'Gagal memuat soal.';
+            // Even if there's an error, re-enable input after a delay
+            setTimeout(() => {
+                gameActive = true;
+            }, 200);
         }
     }
 
